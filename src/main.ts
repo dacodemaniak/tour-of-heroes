@@ -3,4 +3,15 @@
  * @author Aélion - Avr. 2019 - dev-team@ideafactory.fr
  * @version 1.0.0
  */
-console.log('Hello Typescript');
+import * as $ from 'jquery';
+
+class Main {
+    private appTitle: string;
+
+    constructor() {
+        this.appTitle = 'Hello TypeScript';
+        $('title').html(this.appTitle);
+    }
+}
+
+const _APP = new Main();

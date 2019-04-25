@@ -1,4 +1,5 @@
 var path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 var webpack = require('webpack');
 
  module.exports = {
@@ -19,9 +20,11 @@ var webpack = require('webpack');
              {
                  test: /\.js$/,
                  loader: 'babel-loader',
-                 query: {
-                     presets: ['es2015']
-                 }
+                 options: {
+                    presets: [
+                      ['@babel/preset-env']
+                    ]
+                  }
              },
              {
                  test: /\.tsx?$/,

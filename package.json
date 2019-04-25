@@ -6,7 +6,7 @@
   "scripts": {
     "babel": "babel --presets es2015 ./src/main.ts -o build/bundle.js",
     "webpack:dev": "webpack --watch --mode=development",
-    "webpack:prod": "webpack --watch --mode=production"
+    "webpack:prod": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,11 @@
   },
   "homepage": "https://github.com/dacodemaniak/tour-of-heroes#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
     "terser-webpack-plugin": "^1.2.3",
     "typescript": "^3.4.5",
     "webpack": "^4.30.0",
