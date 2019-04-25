@@ -1,0 +1,41 @@
+{
+  "name": "heroes",
+  "version": "1.0.0",
+  "description": "Tour of heroes frontend for Spring backend",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel --presets es2015 ./src/main.ts -o build/bundle.js",
+    "webpack:dev": "webpack --watch --mode=development",
+    "webpack:prod": "webpack --watch --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dacodemaniak/tour-of-heroes.git"
+  },
+  "keywords": [
+    "Typescript",
+    "jQuery",
+    "Bootstrap"
+  ],
+  "author": "Aélion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dacodemaniak/tour-of-heroes/issues"
+  },
+  "homepage": "https://github.com/dacodemaniak/tour-of-heroes#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "terser-webpack-plugin": "^1.2.3",
+    "typescript": "^3.4.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.3.29",
+    "bootstrap": "^4.3.1",
+    "braces": "^2.3.2",
+    "jquery": "^3.4.0",
+    "ts-loader": "^5.4.3"
+  }
+}
