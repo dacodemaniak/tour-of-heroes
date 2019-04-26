@@ -10,6 +10,9 @@ export class Hero {
         return this.id;
     }
     
+    public set id(id: number) {
+        this._id = id;
+    }
     public get name(): string {
         return this._name;
     }

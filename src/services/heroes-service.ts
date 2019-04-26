@@ -1,4 +1,5 @@
 import { Hero } from "./../models/hero-model";
+import * as $ from 'jquery';
 
 export class HeroesService {
 
@@ -10,24 +11,30 @@ export class HeroesService {
         }
 
         // Sinon, alimenter le tableau des Héros
-        return new Promise((resolve) => {
-            this._getAll().then((heroes) => {
-                this.listOfHeroes = heroes.map((hero, index) => {
-                    let item: Hero = new Hero();
-                    item.name = hero.name;
-                    item.lifePoints = hero.lifePoints;
-                    item.strength = hero.strength;
-                    return item;
-                });
-                resolve(this.listOfHeroes);
-            });
-        });
+        return this._getAll();
     }
 
     private _getAll(): Promise<Array<Hero>> {
         return new Promise((resolve) => {
-            resolve(JSON.parse(localStorage.getItem('heroes')));
-        })
-        
+            $.ajax({
+                url: 'http://localhost:8080/api/v1/all',
+                method: 'get',
+                dataType: 'json',
+                success: (data: Array<any>) => {
+                    this.listOfHeroes = data.map((hero, index) => {
+                        let item: Hero = new Hero();
+                        item.id = hero.id,
+                        item.name = hero.name;
+                        item.lifePoints = hero.lifePoints;
+                        item.strength = hero.strength;
+                        return item;
+                    });
+                    resolve(this.listOfHeroes);
+                },
+                error: (xhr, error) => {
+                    resolve(null);
+                }
+            });
+        });
     }
 }
