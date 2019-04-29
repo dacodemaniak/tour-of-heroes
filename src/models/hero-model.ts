@@ -22,7 +22,7 @@ export class Hero {
     }
 
     public get strength(): number {
-        return this._lifePoints;
+        return this._strength;
     }
 
     public set name(name: string) {

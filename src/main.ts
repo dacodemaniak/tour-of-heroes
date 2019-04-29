@@ -8,6 +8,7 @@ import { ControllerInterface } from './core/interfaces/controller-interface';
 import { MenuModule } from './modules/menu/menu-module';
 import { HeroesService } from './services/heroes-service';
 import { Hero } from './models/hero-model';
+import { HeroesList } from './modules/heroes-list/heroes-list';
 
 class Main implements ControllerInterface {
 
@@ -30,6 +31,7 @@ class Main implements ControllerInterface {
         } else {
             result.then((heroes: Array<Hero>) => {
                 console.log('Promesse de tableau de Héros : ' + JSON.stringify(heroes));
+                const heroesList: HeroesList = new HeroesList(heroes);
             });
         }
     }
