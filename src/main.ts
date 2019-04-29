@@ -9,6 +9,7 @@ import { MenuModule } from './modules/menu/menu-module';
 import { HeroesService } from './services/heroes-service';
 import { Hero } from './models/hero-model';
 import { HeroesList } from './modules/heroes-list/heroes-list';
+import { HeroesForm } from './modules/heroes-form/heroes-form';
 
 class Main implements ControllerInterface {
 
@@ -34,6 +35,9 @@ class Main implements ControllerInterface {
                 const heroesList: HeroesList = new HeroesList(heroes);
             });
         }
+
+        // Form instanciation
+        const heroForm: HeroesForm = new HeroesForm();
     }
 }
 

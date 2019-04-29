@@ -14,7 +14,8 @@ export class HeroesList {
 
             // On peut boucler sur la liste des héros et alimenter le tableau
             const body: JQuery = $('[heroes]').find('tbody');
-            console.log('Template : ' + body);
+            const rows: JQuery = body.children('tr');
+            rows.remove();
             this.heroes.forEach((hero: Hero, index: number) => {
                 let tr: JQuery = $('<tr>');
                 let name: JQuery = ($('<td>')).html(hero.name);
@@ -40,6 +41,5 @@ export class HeroesList {
                 }
             );
         })
-
     }
 }

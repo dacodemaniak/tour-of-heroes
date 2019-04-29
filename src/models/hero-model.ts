@@ -36,4 +36,12 @@ export class Hero {
     public set strength(strength: number) {
         this._strength = strength;
     }
+
+    public toHero(): any {
+        return {
+            name: this._name,
+            lifePoints: this._lifePoints,
+            strength: this._strength
+        };
+    }
 }
